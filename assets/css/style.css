@@ -323,3 +323,25 @@ footer .copyright img {
     flex-basis: 25%;
     cursor: pointer;
 }
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.single-product input:focus {
+    outline: none;
+}
+
+.single-product .buy-btn {
+    background-color: #FB774B;
+    opacity: 1;
+    transition: 0.4s all;
+}
+
+.single-product .buy-btn:hover {
+    background-color: #222222;
+}
