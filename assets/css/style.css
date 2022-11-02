@@ -375,3 +375,28 @@ footer .copyright img {
     margin-right: 10px;
 }
 
+.cart td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+.cart td a {
+    color: #FB774B;
+}
+
+.cart .remove-btn {
+    color: #FB774B;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cart .edit-btn {
+    color: #FB774B;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.cart .product-info p {
+    margin-bottom: 3px;
+}
