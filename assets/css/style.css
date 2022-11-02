@@ -419,3 +419,13 @@ td:last-child {
 th:last-child {
     text-align: right;
 }
+
+.checkout-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkout-btn {
+    background-color: #FB774B;
+    color: #FFF;
+}
