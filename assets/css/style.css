@@ -455,3 +455,28 @@ th:last-child {
 #login-form #register-url {
     color: #FB774B;
 }
+
+
+/* Register */
+
+#reg-form {
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #FB774B;
+}
+
+#reg-form input {
+    width: 50%;
+    margin: 5px auto;
+}
+
+#reg-form #reg-btn {
+    background-color: #FB774B;
+    color: #FFF;
+}
+
+#reg-form #login-url {
+    color: #FB774B;
+}
