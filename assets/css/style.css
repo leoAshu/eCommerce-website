@@ -480,3 +480,27 @@ th:last-child {
 #reg-form #login-url {
     color: #FB774B;
 }
+
+
+/* Account */
+
+#account-form {
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input {
+    margin: 5px auto;
+}
+
+#account-form #change-password-btn {
+    background-color: #FB774B;
+    color: #FFF;
+}
+
+.account-info #order-btn, #logout-btn {
+    color: #FB774B;
+    text-decoration: none;
+}
