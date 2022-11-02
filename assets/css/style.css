@@ -400,3 +400,22 @@ footer .copyright img {
 .cart .product-info p {
     margin-bottom: 3px;
 }
+
+.cart-total {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-total table {
+    width: 100%;
+    max-width: 500px;
+    border-top: 3px solid #FB774B;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
+}
