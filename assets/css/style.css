@@ -560,3 +560,10 @@ th:last-child {
     color: #FFF;
     background-color: #FB774B;
 }
+
+
+/* Contact */
+#contact span {
+    color: #FB774B;
+    font-weight: 600;
+}
