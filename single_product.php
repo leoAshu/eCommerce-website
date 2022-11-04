@@ -99,7 +99,7 @@ if(isset($_GET['product_id'])) {
 
                 <div class="col-lg-6 col-12">
                     <h6>Men/Shoes</h6>
-                    <h3 class="py-4">Men's Fashion</h3>
+                    <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
                     <h2>$<?php echo $row['product_price']; ?></h2>
                     <input type="number" value="1"/>
                     <button class="buy-btn">Add To Cart</button>
