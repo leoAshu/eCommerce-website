@@ -1,3 +1,25 @@
+<?php 
+
+if(isset($_GET['product_id'])) {
+
+    include('server/connection.php');
+
+    $id = $_GET['product_id'];
+
+    $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ?");
+    $stmt->bind_param("i", $id);
+
+    $stmt->execute();
+
+    $product = $stmt->get_result();
+
+
+} else {
+    header('location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,34 +86,37 @@
     <!-- Single Product -->
     <section class="container single-product my-5 pt-5">
         <div class="row mt-5">
+            <?php while($row = $product->fetch_assoc()) { ?>
             
-            <div class="col-lg-5 col-md-6 col-sm-12">
-                <img class="img-fluid w-100 pb-1" src="assets/imgs/f1.jpg" id="mainImg"/>
-                <div class="small-img-group">
-                    <div class="small-img-col">
-                        <img class="small-img" src="assets/imgs/f1.jpg" width="100%"/>
-                    </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="assets/imgs/f3.jpg" width="100%"/>
-                    </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="assets/imgs/f4.jpg" width="100%"/>
-                    </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="assets/imgs/f2.jpg" width="100%"/>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <img class="img-fluid w-100 pb-1" src="assets/imgs/<?php echo $row['product_image']; ?>" id="mainImg"/>
+                    <div class="small-img-group">
+                        <div class="small-img-col">
+                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image']; ?>" width="100%"/>
+                        </div>
+                        <div class="small-img-col">
+                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image2']; ?>" width="100%"/>
+                        </div>
+                        <div class="small-img-col">
+                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image3']; ?>" width="100%"/>
+                        </div>
+                        <div class="small-img-col">
+                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image4']; ?>" width="100%"/>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-6 col-12">
-                <h6>Men/Shoes</h6>
-                <h3 class="py-4">Men's Fashion</h3>
-                <h2>$199.00</h2>
-                <input type="number" value="1"/>
-                <button class="buy-btn">Add To Cart</button>
-                <h4 class="mt-5 mb-5">Product details</h4>
-                <span>The details of this product will be displayed shortly.</span>
-            </div>
+                <div class="col-lg-6 col-12">
+                    <h6>Men/Shoes</h6>
+                    <h3 class="py-4">Men's Fashion</h3>
+                    <h2>$<?php echo $row['product_price']; ?></h2>
+                    <input type="number" value="1"/>
+                    <button class="buy-btn">Add To Cart</button>
+                    <h4 class="mt-5 mb-5">Product details</h4>
+                    <span><?php echo $row['product_description']; ?></span>
+                </div>
+
+            <?php } ?>
 
         </div>
     </section>
