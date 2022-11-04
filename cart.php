@@ -1,6 +1,53 @@
 <?php 
 
+session_start();
 
+if(isset($_POST['add_to_cart'])) {
+
+    if(isset($_SESSION['cart'])) {
+        // cart has products
+
+        $products_array_ids = array_column($_SESSION['cart'], "id");
+
+        if(!in_array($_POST['product_id'], $products_array_ids)) {
+        
+            $product_array = array(
+                'id' => $_POST['product_id'],
+                'name' => $_POST['product_name'],
+                'image' => $_POST['product_image'],
+                'price' => $_POST['product_price'],
+                'quantity' => $_POST['product_quantity']
+            );
+
+            $_SESSION['cart'][$_POST['product_id']] = $product_array;
+
+        } else {
+            echo '<script>alert("Product was already added to cart!")</script>';
+            // echo '<script>window.location="index.php";</script>';
+        }
+
+    } else {
+        // first product
+        $id = $_POST['product_id'];
+        $name = $_POST['product_name'];
+        $image = $_POST['product_image'];
+        $price = $_POST['product_price'];
+        $quantity = $_POST['product_quantity'];
+
+        $product_array = array(
+            'id' => $id,
+            'name' => $name,
+            'image' => $image,
+            'price' => $price,
+            'quantity' => $quantity
+        );
+
+        $_SESSION['cart'][$id] = $product_array;
+    }
+
+} else {
+    header("location: index.php");
+}
 
 ?>
 
@@ -83,71 +130,31 @@
                 <th>Subtotal</th>
             </tr>
 
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/f1.jpg"/>
-                        <div>
-                            <p>Light Gray Backpack</p>
-                            <small><span>$</span>199.49</small>
-                            <br>
-                            <a class="remove-btn" href="#">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <input type="number"  value="1"/>
-                    <a class="edit-btn" href="#">Edit</a>
-                </td>
-                <td>
-                    <span>$</span>
-                    <span class="product-price">199.49</span>
-                </td>
-            </tr>
+            <?php foreach($_SESSION['cart'] as $key => $value) { ?>
 
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/f1.jpg"/>
+                        <img src="assets/imgs/<?php echo $value['image']; ?>"/>
                         <div>
-                            <p>Light Gray Backpack</p>
-                            <small><span>$</span>199.49</small>
+                            <p><?php echo $value['name']; ?></p>
+                            <small><span>$</span><?php echo $value['price']; ?></small>
                             <br>
                             <a class="remove-btn" href="#">Remove</a>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <input type="number"  value="1"/>
+                    <input type="number"  value="<?php echo $value['quantity']; ?>"/>
                     <a class="edit-btn" href="#">Edit</a>
                 </td>
                 <td>
                     <span>$</span>
-                    <span class="product-price">199.49</span>
+                    <span class="product-price"><?php echo $value['price'] * $value['quantity']; ?></span>
                 </td>
             </tr>
 
-            <tr>
-                <td>
-                    <div class="product-info">
-                        <img src="assets/imgs/f1.jpg"/>
-                        <div>
-                            <p>Light Gray Backpack</p>
-                            <small><span>$</span>199.49</small>
-                            <br>
-                            <a class="remove-btn" href="#">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <input type="number"  value="1"/>
-                    <a class="edit-btn" href="#">Edit</a>
-                </td>
-                <td>
-                    <span>$</span>
-                    <span class="product-price">199.49</span>
-                </td>
-            </tr>
+            <?php } ?>
 
         </table>
 
