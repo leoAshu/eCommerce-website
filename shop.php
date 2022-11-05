@@ -1,6 +1,7 @@
+<?php include('layouts/header.php'); ?>
+
 <?php include('server/get_all_products.php'); ?>
 
-<?php include('layouts/header.php'); ?>
 
     <!-- Products List -->
     <section id="featured" class="my-5 py-5">

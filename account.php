@@ -1,5 +1,7 @@
 <?php
 
+include('layouts/header.php');
+
 if(!isset($_SESSION['logged_in'])) {
     header('location: login.php');
     exit;
@@ -16,8 +18,6 @@ if(isset($_GET['logout'])) {
 }
 
 ?>
-
-<?php include('layouts/header.php'); ?>
 
     <!-- Account -->
     <section class="my-5 py-5">

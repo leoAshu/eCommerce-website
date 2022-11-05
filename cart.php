@@ -1,5 +1,7 @@
 <?php 
 
+include('layouts/header.php');
+
 if(isset($_POST['add_to_cart'])) {
 
     if(isset($_SESSION['cart'])) {
@@ -78,8 +80,6 @@ function calculateTotal() {
 }
 
 ?>
-
-<?php include('layouts/header.php'); ?>
 
     <!-- Cart -->
     <section class="cart container my-5 py-5">

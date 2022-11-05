@@ -1,5 +1,7 @@
 <?php 
 
+include('layouts/header.php');
+
 if(isset($_GET['product_id'])) {
 
     include('server/get_single_product.php');
@@ -9,8 +11,6 @@ if(isset($_GET['product_id'])) {
 }
 
 ?>
-
-<?php include('layouts/header.php'); ?>
 
     <!-- Single Product -->
     <section class="container single-product my-5 pt-5">
