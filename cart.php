@@ -127,7 +127,9 @@ if(isset($_POST['add_to_cart'])) {
                 <th>Subtotal</th>
             </tr>
 
-            <?php foreach($_SESSION['cart'] as $key => $value) { ?>
+            <?php if(isset($_SESSION['cart'])) {
+                foreach($_SESSION['cart'] as $key => $value) { 
+            ?>
 
             <tr>
                 <td>
@@ -137,7 +139,9 @@ if(isset($_POST['add_to_cart'])) {
                             <p><?php echo $value['name']; ?></p>
                             <small><span>$</span><?php echo $value['price']; ?></small>
                             <br>
-                            <a class="remove-btn" href="#">Remove</a>
+                            <form method="POST" action="cart.php">
+                            <ipput type="submit" name="remove_product" class="remove-btn" href="#">Remove</a>
+                            </form>
                         </div>
                     </div>
                 </td>
@@ -151,9 +155,15 @@ if(isset($_POST['add_to_cart'])) {
                 </td>
             </tr>
 
-            <?php } ?>
+            <?php 
+                    } 
+                }
+
+            ?>
 
         </table>
+
+        <?php if(isset($_SESSION['cart'])) { ?>
 
         <div class="cart-total">
             <table>
@@ -172,6 +182,8 @@ if(isset($_POST['add_to_cart'])) {
         <div class="checkout-container">
             <button class="btn checkout-btn">Checkout</button>
         </div>
+
+        <?php } ?>
 
     </section>
 
