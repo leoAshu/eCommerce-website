@@ -34,9 +34,6 @@ if(isset($_POST['login'])) {
             header('location: login.php?error=Email or password is incorrect!');
         }
     }
-} else {
-
-    header('location: login.php?error=Something went wrong!');
 }
 
 ?>

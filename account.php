@@ -7,6 +7,16 @@ if(!isset($_SESSION['logged_in'])) {
     exit;
 }
 
+if(isset($_GET['logout'])) {
+    if(isset($_SESSION['logged_in'])) {
+        unset($_SESSION['logged_in']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_name']);
+        header('location: login.php');
+        exit;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +94,7 @@ if(!isset($_SESSION['logged_in'])) {
                     <p>Name: <span style="color:#FB774B"><?php if(isset($_SESSION['user_name'])) { echo $_SESSION['user_name']; } ?></span></p>
                     <p>Email: <span style="color:#FB774B"><?php if(isset($_SESSION['user_email'])) { echo $_SESSION['user_email']; } ?></span></p>
                     <p><a href="#orders" id="order-btn">My Orders</a></p>
-                    <p><a href="#" id="logout-btn">Logout</a></p>
+                    <p><a href="account.php?logout=1" id="logout-btn">Logout</a></p>
                 </div>
             </div>
 
