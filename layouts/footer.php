@@ -26,7 +26,7 @@
                 </div>
                 <div>
                     <h6 class="text-uppercase">Phone</h6>
-                    <p>669 499 6135</p>
+                    <p>+1 (669) 499-6135</p>
                 </div>
                 <div>
                     <h6 class="text-uppercase">Email</h6>
