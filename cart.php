@@ -44,6 +44,14 @@ if(isset($_POST['add_to_cart'])) {
 
         $_SESSION['cart'][$id] = $product_array;
     }
+} else if(isset($_POST['remove_product'])) {
+    
+    $id = $_POST['product_id'];
+    unset($_SESSION['cart'][$id]);
+
+    if(count($_SESSION['cart']) == 0) {
+        unset($_SESSION['cart']);
+    }
 }
 
 ?>
@@ -140,7 +148,8 @@ if(isset($_POST['add_to_cart'])) {
                             <small><span>$</span><?php echo $value['price']; ?></small>
                             <br>
                             <form method="POST" action="cart.php">
-                            <ipput type="submit" name="remove_product" class="remove-btn" href="#">Remove</a>
+                                <input type="hidden" name="product_id" value="<?php echo $value['id']; ?>"/>
+                                <input type="submit" name="remove_product" class="remove-btn" value="Remove"/>
                             </form>
                         </div>
                     </div>
