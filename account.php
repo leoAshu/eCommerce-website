@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['logged_in'])) {
+    header('location: login.php');
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,9 +81,9 @@
                 <hr class="mx-auto">
 
                 <div class="account-info">
-                    <p>Name <span>John</span></p>
-                    <p>Email <span>john@email.com</span></p>
-                    <p><a href="#" id="order-btn">My Orders</a></p>
+                    <p>Name: <span style="color:#FB774B"><?php if(isset($_SESSION['user_name'])) { echo $_SESSION['user_name']; } ?></span></p>
+                    <p>Email: <span style="color:#FB774B"><?php if(isset($_SESSION['user_email'])) { echo $_SESSION['user_email']; } ?></span></p>
+                    <p><a href="#orders" id="order-btn">My Orders</a></p>
                     <p><a href="#" id="logout-btn">Logout</a></p>
                 </div>
             </div>
@@ -104,7 +115,7 @@
     </section>
 
     <!-- Orders -->
-    <section class="orders container my-5 py-2">
+    <section id="orders" class="orders container my-5 py-2">
         <div class="container mt-2">
             <h2 class="font-weight-bold text-center">My Orders</h2>
             <hr class="mx-auto">
