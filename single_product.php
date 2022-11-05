@@ -1,9 +1,7 @@
 <?php 
 
-include('layouts/header.php');
-
 if(isset($_GET['product_id'])) {
-
+    
     include('server/get_single_product.php');
 
     $row = $product->fetch_assoc();
@@ -13,7 +11,6 @@ if(isset($_GET['product_id'])) {
         $data = json_decode($_COOKIE['visited_products'], true);
         
         if (array_key_exists($_GET['product_id'], $data)) {
-            
             $data[$_GET['product_id']]['count'] += 1;
             setcookie('visited_products', json_encode($data), time()+3600);
 
@@ -48,6 +45,8 @@ if(isset($_GET['product_id'])) {
 } else {
     header('location: index.php');
 }
+
+include('layouts/header.php');
 
 ?>
 

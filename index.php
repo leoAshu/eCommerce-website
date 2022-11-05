@@ -1,10 +1,5 @@
 <?php include('layouts/header.php'); ?>
 
-<?php
-
-
-?>
-
     <!-- Home -->
     <section id="home">
         <div class="container">
@@ -15,18 +10,17 @@
         </div>
     </section>
 
-    
+
     <!-- Most Visited -->
     <?php
 
     if(isset($_COOKIE['visited_products'])) {
-
         $data = json_decode($_COOKIE['visited_products'], true);
-    
+        
         usort($data, function($a, $b) {
             return (-1*$a['count']) <=> (-1*$b['count']);
         });
-
+        
         if(count($data) > 5) {
             $data = array_slice($data, 0, 5);
         }
