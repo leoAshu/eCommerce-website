@@ -1,4 +1,15 @@
-<?php include('layouts/header.php'); ?>
+<?php 
+include('layouts/header.php');
+
+$myfile = fopen("contacts.txt", "r") or die("Unable to open file!");
+
+$data = fread($myfile,filesize("contacts.txt"));
+
+$data_arr = explode( ';', $data );
+
+fclose($myfile);
+
+?>
 
     <!-- Contact -->
     <section id="contact" class="container my-5 py-5">
@@ -6,13 +17,13 @@
             <h3>Contact Us</h3>
             <hr class="mx-auto">
             <p class="w-50 mx-auto">
-               Address:  <span>1265 N Capitol Ave, Berryessa, San Jose</span>
+               Address:  <span><?php echo $data_arr[0] ?></span>
             </p>
             <p class="w-50 mx-auto">
-                Email: <span>info@email.com</span>
+                Email: <span><?php echo $data_arr[1] ?></span>
             </p>
             <p class="w-50 mx-auto">
-                Phone: <span>669 499 6135</span>
+                Phone: <span><?php echo $data_arr[2] ?></span>
             </p>
         </div>
     </section>
