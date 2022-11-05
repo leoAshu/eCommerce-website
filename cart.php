@@ -52,6 +52,14 @@ if(isset($_POST['add_to_cart'])) {
     if(count($_SESSION['cart']) == 0) {
         unset($_SESSION['cart']);
     }
+
+} else if(isset($_POST['update_quantity'])) {
+
+    $id = $_POST['product_id'];
+    $quantity = $_POST['product_quantity'];
+
+    $_SESSION['cart'][$id]['quantity'] = $quantity;
+
 }
 
 ?>
@@ -155,8 +163,13 @@ if(isset($_POST['add_to_cart'])) {
                     </div>
                 </td>
                 <td>
-                    <input type="number"  value="<?php echo $value['quantity']; ?>"/>
-                    <a class="edit-btn" href="#">Edit</a>
+
+                    <form method="POST" action="cart.php">
+                        <input type="hidden" name="product_id" value="<?php echo $value['id']; ?>"/>
+                        <input type="number" name="product_quantity" value="<?php echo $value['quantity']; ?>"/>
+                        <input type="submit" class="update-btn" name="update_quantity" value="Update"/>
+                    </form>
+
                 </td>
                 <td>
                     <span>$</span>

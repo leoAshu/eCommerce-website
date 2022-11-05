@@ -388,17 +388,21 @@ footer .copyright img {
 .cart .remove-btn {
     color: #FB774B;
     text-decoration: none;
-    text-align: left;
     font-size: 14px;
     background-color: #FFF;
     border: none;
     width: 100%;
+    text-align: left;
 }
 
-.cart .edit-btn {
+.cart .update-btn {
     color: #FB774B;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
+    background-color: #FFF;
+    border: none;
+    width: 50%;
+    text-align: left;
 }
 
 .cart .product-info p {
