@@ -4,6 +4,11 @@ session_start();
 
 include('server/connection.php');
 
+if($_SESSION['logged_in']) {
+    header('location: account.php');
+    exit;
+}
+
 if(isset($_POST['register'])) {
     
     $name = $_POST['name'];
@@ -55,10 +60,6 @@ if(isset($_POST['register'])) {
             }
         }
     }
-} else if($_SESSION['logged_in']) {
-
-    // User is logged in, i.e. already registered
-    header('location: account.php');
 }
 
 ?>

@@ -1,3 +1,46 @@
+<?php
+
+session_start();
+
+include('server/connection.php');
+
+if(isset($_SESSION['logged_in'])) {
+    header('location: account.php');
+    exit;
+}
+
+if(isset($_POST['login'])) {
+    
+    $email = $_POST['email'];
+    $password = md5($_POST['password']);
+
+    $stmt = $conn->prepare("SELECT user_id, user_name FROM users where user_email = ? AND user_password = ?");
+    $stmt->bind_param('ss', $email, $password);
+
+    if($stmt->execute()) {
+        $stmt->bind_result($user_id, $user_name);
+        $stmt->store_result();
+        
+        if($stmt->num_rows() == 1) {
+            $stmt->fetch();
+            
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_name'] = $user_name;
+            $_SESSION['user_email'] = $email;
+            $_SESSION['logged_in'] = true;
+
+            header('location: account.php?message=Logged in successfully!');
+        } else {
+            header('location: login.php?error=Email or password is incorrect!');
+        }
+    }
+} else {
+
+    header('location: login.php?error=Something went wrong!');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,8 +114,8 @@
         </div>
 
         <div class="mx-auto container">
-            <form id="login-form">
-                
+            <form id="login-form" method="POST" action="login.php">
+                <p style="color:red" class="text-center"><?php if(isset($_GET['error'])) { echo $_GET['error']; } ?></p>
                 <div class="form-group">
                     <label>Email</label>
                     <input type="email" class="form-control" id="login-email" name="email" placeholder="Email" required/>
@@ -84,7 +127,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" class="btn" id="login-btn" value="Login"/>
+                    <input type="submit" class="btn" id="login-btn" name="login" value="Login"/>
                 </div>
 
 
