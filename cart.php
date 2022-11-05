@@ -44,9 +44,6 @@ if(isset($_POST['add_to_cart'])) {
 
         $_SESSION['cart'][$id] = $product_array;
     }
-
-} else {
-    header("location: index.php");
 }
 
 ?>
