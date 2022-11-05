@@ -22,7 +22,7 @@
         <div class="container">
 
             <img class="logo" src="assets/imgs/logo.png"/>
-            <h2 class="brand">Brand</h2>
+            <h2 class="Shoppe">Shoppe</h2>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,8 +52,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
-                        <a href="account.php"><i class="fas fa-user"></i></a>
+                        <a style="color:#000" href="cart.php"><i class="fas fa-shopping-bag"></i></a>
+                        <a style="color:#000" href="account.php"><i class="fas fa-user"></i></a>
                     </li>
 
                 </ul>
@@ -72,13 +72,13 @@
     </section>
 
 
-    <!-- Brand -->
-    <section id="brand" class="container">
+    <!-- Shoppe -->
+    <section id="Shoppe" class="container">
         <div class="row">
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand1.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand2.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand3.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand4.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe1.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe2.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe3.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe4.png"/>
         </div>
     </section>
 

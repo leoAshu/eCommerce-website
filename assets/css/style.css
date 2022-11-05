@@ -70,7 +70,7 @@ button:hover {
 }
 
 .navbar .navbar-nav .nav-link {
-    padding: 0 20px;
+    padding: 0 16px;
     color: #000;
     transition: 0.4s ease;
 }
@@ -84,11 +84,10 @@ button:hover {
 
 .navbar i {
     font-size: 1.2rem;
-    padding: 0 0.7px;
+    padding: 0 1px;
     transition: 0.4s ease;
     /* font-weight: 500; */
     cursor: pointer;
-    margin-left: 2px;
 }
 
 @media only screen and (max-width:990px) {
@@ -308,7 +307,7 @@ footer .copyright img {
     height: 50px;
 }
 
-.navbar .brand {
+.navbar .Shoppe {
     color: coral;
     margin: 3px 5px;
     font-size: 1.5rem;
