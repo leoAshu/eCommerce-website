@@ -34,7 +34,7 @@ if(isset($_GET['product_id'])) {
         <div class="container">
 
             <img class="logo" src="assets/imgs/logo.png"/>
-            <h2 class="Shoppe">Shoppe</h2>
+            <h2 class="brand">Brand</h2>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,8 +64,8 @@ if(isset($_GET['product_id'])) {
                     </li>
 
                     <li class="nav-item">
-                        <a style="color:#000" href="cart.php"><i class="fas fa-shopping-bag"></i></a>
-                        <a style="color:#000" href="account.php"><i class="fas fa-user"></i></a>
+                        <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
+                        <a href="account.html"><i class="fas fa-user"></i></a>
                     </li>
 
                 </ul>
