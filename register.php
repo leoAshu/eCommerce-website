@@ -48,6 +48,7 @@ if(isset($_POST['register'])) {
             if($stmt->execute()) {
 
                 // Account created successfully
+                $_SESSION['user_id'] = $stmt1->insert_id;
                 $_SESSION['user_email'] = $email;
                 $_SESSION['user_name'] = $name;
                 $_SESSION['logged_in'] = true;
