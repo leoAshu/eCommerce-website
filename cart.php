@@ -1,7 +1,5 @@
 <?php 
 
-session_start();
-
 if(isset($_POST['add_to_cart'])) {
 
     if(isset($_SESSION['cart'])) {
@@ -66,12 +64,17 @@ if(isset($_POST['add_to_cart'])) {
 
 
 function calculateTotal() {
-    $total = 0;
+    $total_price = 0;
+    $total_quantity = 0;
+
     foreach($_SESSION['cart'] as $key => $value) {
         $product = $_SESSION['cart'][$key];
-        $total += ($product['quantity'] * $product['price']);
+        $total_price += ($product['quantity'] * $product['price']);
+        $total_quantity += $product['quantity'];
     }
-    $_SESSION['total'] = $total;
+
+    $_SESSION['total_price'] = $total_price;
+    $_SESSION['total_quantity'] = $total_quantity;
 }
 
 ?>

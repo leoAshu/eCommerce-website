@@ -574,3 +574,13 @@ th:last-child {
     color: #FB774B;
     font-weight: 600;
 }
+
+/* Shop */
+.pagination a {
+    color: coral;
+}
+
+.pagination li:hover a {
+    color: #FFF;
+    background-color: coral;
+}

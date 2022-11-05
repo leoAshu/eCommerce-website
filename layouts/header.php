@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,11 +50,17 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
 
                     <li class="nav-item">
-                        <a style="color:#000" href="cart.php"><i class="fas fa-shopping-bag"></i></a>
+                        <a style="color:#000" href="cart.php">
+                            <i class="fas fa-shopping-bag">
+                                <?php if(isset($_SESSION['total_quantity']) && $_SESSION['total_quantity'] != 0) { ?>
+                                <span><?php echo $_SESSION['total_quantity']; ?></span>
+                                <?php } ?>
+                            </i>
+                        </a>
                         <a style="color:#000" href="account.php"><i class="fas fa-user"></i></a>
                     </li>
 
