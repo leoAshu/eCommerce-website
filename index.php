@@ -71,14 +71,13 @@
         </div>
     </section>
 
-
-    <!-- Shoppe -->
-    <section id="Shoppe" class="container">
+    <!-- Brand -->
+    <section id="brand" class="container">
         <div class="row">
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe1.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe2.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe3.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/Shoppe4.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand1.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand2.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand3.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand4.png"/>
         </div>
     </section>
 
@@ -185,8 +184,6 @@
             
         </div>
     </section>
-
-    <!-- Shoes -->
 
     <!-- Footer -->
     <footer class="mt-5 py-5">
