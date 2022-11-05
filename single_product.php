@@ -6,6 +6,45 @@ if(isset($_GET['product_id'])) {
 
     include('server/get_single_product.php');
 
+    $row = $product->fetch_assoc();
+
+    if(isset($_COOKIE['visited_products'])) {
+        
+        $data = json_decode($_COOKIE['visited_products'], true);
+        
+        if (array_key_exists($_GET['product_id'], $data)) {
+            
+            $data[$_GET['product_id']]['count'] += 1;
+            setcookie('visited_products', json_encode($data), time()+3600);
+
+        } else {
+            $p = [
+                'id' => $_GET['product_id'],
+                'name' => $row['product_name'],
+                'image' => $row['product_image'],
+                'price' => $row['product_price'],
+                'count' => 1
+            ];
+            $data[$_GET['product_id']] = $p;
+
+            setcookie('visited_products', json_encode($data), time()+3600);
+        }
+    } else {
+        $p = [
+            'id' => $_GET['product_id'],
+            'name' => $row['product_name'],
+            'image' => $row['product_image'],
+            'price' => $row['product_price'],
+            'count' => 1
+        ];
+
+        $data = [
+            $_GET['product_id'] => $p
+        ];
+
+        setcookie('visited_products', json_encode($data), time()+3600);
+    }
+
 } else {
     header('location: index.php');
 }
@@ -15,8 +54,6 @@ if(isset($_GET['product_id'])) {
     <!-- Single Product -->
     <section class="container single-product my-5 pt-5">
         <div class="row mt-5">
-
-            <?php while($row = $product->fetch_assoc()) { ?>
                     
                 <!-- Product Image -->
                 <div class="col-lg-5 col-md-6 col-sm-12">
@@ -56,7 +93,7 @@ if(isset($_GET['product_id'])) {
                     <span><?php echo $row['product_description']; ?></span>
                 </div>
 
-            <?php } ?>
+      
 
         </div>
     </section>
