@@ -53,7 +53,7 @@
 
                     <li class="nav-item">
                         <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
-                        <a href="account.html"><i class="fas fa-user"></i></a>
+                        <a href="account.php"><i class="fas fa-user"></i></a>
                     </li>
 
                 </ul>
@@ -61,52 +61,82 @@
         </div>
     </nav>
 
-
-    <!-- Registration -->
+    <!-- Account -->
     <section class="my-5 py-5">
-        
-        <div class="container text-center mt-3 pt-5">
-            <h2 class="form-weight-bold">Register</h2>
+        <div class="row container mx-auto">
+            
+            <div class="text-center mt-3 pt-5 col-lg-6 col-12">
+                <h3 class="font-weight-bold">Account Info</h3>
+                <hr class="mx-auto">
+
+                <div class="account-info">
+                    <p>Name <span>John</span></p>
+                    <p>Email <span>john@email.com</span></p>
+                    <p><a href="#" id="order-btn">My Orders</a></p>
+                    <p><a href="#" id="logout-btn">Logout</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <form id="account-form">
+                    
+                    <h3>Change password</h3>
+                    <hr class="mx-auto">
+                    
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="account-password" name="password" placeholder="New Password" required/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" class="form-control" id="account-password-confirm" name="confirmPassword" placeholder="Re-enter Password" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn" id="change-password-btn"/>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Orders -->
+    <section class="orders container my-5 py-2">
+        <div class="container mt-2">
+            <h2 class="font-weight-bold text-center">My Orders</h2>
             <hr class="mx-auto">
         </div>
 
-        <div class="mx-auto container">
-            <form id="reg-form">
+        <table class="mt-5 pt-5">
 
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" class="form-control" id="reg-name" name="name" placeholder="Name" required/>
-                </div>
-                
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" id="reg-email" name="email" placeholder="Email" required/>
-                </div>
+            <tr>
+                <th>Product</th>
+                <th>Date</th>
+            </tr>
 
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control" id="reg-password" name="password" placeholder="Password" required/>
-                </div>
+            <tr>
+                <td>
+                    <div class="product-info">
+                        <img src="assets/imgs/f1.jpg"/>
+                        <div>
+                            <p class="mt-3">Product Name</p>
+                        </div>
+                    </div>
+                </td>
 
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    <input type="password" class="form-control" id="reg-confirm-password" name="confirmPassword" placeholder="Confirm Password" required/>
-                </div>
+                <td>
+                    <span>11-02-2022</span>
+                </td>
+            </tr>
 
-                <div class="form-group">
-                    <input type="submit" class="btn" id="reg-btn" value="Register"/>
-                </div>
+        </table>
 
-
-                <div class="form-group">
-                    <a id="login-url" class="btn">Already have an account? Login</a>
-                </div>
-
-            </form>
         </div>
 
     </section>
-
 
     <!-- Footer -->
     <footer class="mt-5 py-5">
