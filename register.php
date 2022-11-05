@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include('server/connection.php');
 
 if(isset($_POST['register'])) {
@@ -22,10 +24,11 @@ if(isset($_POST['register'])) {
     } else {
         
         // Check if user email exists
-        $stmt = $conn->prepare("SELECT * FROM users where user_email = ?");
+        $stmt = $conn->prepare("SELECT count(*) FROM users where user_email = ?");
         $stmt->bind_param('s',$email);
         $stmt->execute();
         $stmt->bind_result($num_rows);
+        $stmt->store_result();
         $stmt->fetch();
     
         if($num_rows != 0) {
@@ -34,8 +37,8 @@ if(isset($_POST['register'])) {
         
         } else {
 
-            $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password) VALUES (?,?,?)");
-            $stmt->bind_param('sss', $name, $email, md5($password));
+            $stmt1 = $conn->prepare("INSERT INTO users (user_name, user_email, user_password) VALUES (?,?,?)");
+            $stmt1->bind_param('sss', $name, $email, md5($password));
                         
             if($stmt->execute()) {
 
@@ -52,11 +55,11 @@ if(isset($_POST['register'])) {
             }
         }
     }
-} else {
+} else if($_SESSION['logged_in']) {
 
-    header('location: register.php?error:Fill the form to register!');
+    // User is logged in, i.e. already registered
+    header('location: account.php');
 }
-
 
 ?>
 
@@ -161,7 +164,7 @@ if(isset($_POST['register'])) {
 
 
                 <div class="form-group">
-                    <a id="login-url" class="btn">Already have an account? Login</a>
+                    <a id="login-url" href="login.php" class="btn">Already have an account? Login</a>
                 </div>
 
             </form>

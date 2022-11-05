@@ -89,7 +89,7 @@
 
 
                 <div class="form-group">
-                    <a id="register-url" class="btn">Don't have an account? Register</a>
+                    <a id="register-url" href="register.php" class="btn">Don't have an account? Register</a>
                 </div>
 
             </form>
