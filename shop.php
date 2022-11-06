@@ -1,7 +1,12 @@
-<?php include('layouts/header.php'); ?>
+<?php 
 
-<?php include('server/get_all_products.php'); ?>
+session_start();
 
+include('server/get_all_products.php'); 
+
+include('layouts/header.php');
+
+?>
 
     <!-- Products List -->
     <section id="featured" class="my-5 py-5">
@@ -31,15 +36,15 @@
             <?php } ?>
             
             <!-- Pagination -->
-            <nav aria-label="Page navigation">
-                <ul class="pagination mt-5">
-                    <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
+            <!--<nav aria-label="Page navigation">-->
+            <!--    <ul class="pagination mt-5">-->
+            <!--        <li class="page-item"><a class="page-link" href="#">Prev</a></li>-->
+            <!--        <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+            <!--        <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+            <!--        <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+            <!--        <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+            <!--    </ul>-->
+            <!--</nav>-->
 
         </div>
 

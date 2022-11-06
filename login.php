@@ -1,6 +1,7 @@
 <?php
 
-include('layouts/header.php');
+session_start();
+
 include('server/connection.php');
 
 if(isset($_SESSION['logged_in'])) {
@@ -34,6 +35,8 @@ if(isset($_POST['login'])) {
         }
     }
 }
+
+include('layouts/header.php');
 
 ?>
 

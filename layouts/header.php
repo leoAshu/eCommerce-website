@@ -1,12 +1,10 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Shoppe</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -54,13 +52,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a style="color:#000" href="cart.php">
-                            <i class="fas fa-shopping-bag">
-                                <?php if(isset($_SESSION['total_quantity']) && $_SESSION['total_quantity'] != 0) { ?>
-                                <span><?php echo $_SESSION['total_quantity']; ?></span>
-                                <?php } ?>
-                            </i>
-                        </a>
+                        <a style="color:#000" href="cart.php"><i class="fas fa-shopping-bag"></i></a>
                         <a style="color:#000" href="account.php"><i class="fas fa-user"></i></a>
                     </li>
 

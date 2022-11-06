@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 if(isset($_GET['product_id'])) {
     
     include('server/get_single_product.php');

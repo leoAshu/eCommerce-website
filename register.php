@@ -1,6 +1,7 @@
 <?php
 
-include('layouts/header.php');
+session_start();
+
 include('server/connection.php');
 
 if($_SESSION['logged_in']) {
@@ -61,6 +62,8 @@ if(isset($_POST['register'])) {
         }
     }
 }
+
+include('layouts/header.php');
 
 ?>
 

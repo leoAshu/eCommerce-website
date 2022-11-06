@@ -1,4 +1,10 @@
-<?php include('layouts/header.php'); ?>
+<?php 
+
+session_start();
+
+include('layouts/header.php'); 
+
+?>
 
     <!-- Home -->
     <section id="home">

@@ -15,7 +15,7 @@ fclose($myfile);
     <section id="contact" class="container my-5 py-5">
         <div class="container text-center mt-5">
             <h3>Contact Us</h3>
-            <hr class="mx-auto">
+            <hr class="mx-auto mb-4">
             <p class="w-50 mx-auto">
                Address:  <span><?php echo $data_arr[0] ?></span>
             </p>

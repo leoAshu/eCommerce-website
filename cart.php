@@ -1,6 +1,6 @@
 <?php 
 
-include('layouts/header.php');
+session_start();
 
 if(isset($_POST['add_to_cart'])) {
 
@@ -62,6 +62,8 @@ if(isset($_POST['add_to_cart'])) {
 
     $_SESSION['cart'][$id]['quantity'] = $quantity;
     calculateTotal();
+} else {
+    calculateTotal();
 }
 
 
@@ -79,7 +81,31 @@ function calculateTotal() {
     $_SESSION['total_quantity'] = $total_quantity;
 }
 
+include('layouts/header.php');
+
 ?>
+
+<style>
+    .cart .update-btn {
+        color: #FB774B;
+        text-decoration: none;
+        font-size: 12px;
+        background-color: #FFF;
+        border: none;
+        width: 50%;
+        text-align: left;
+    }
+    
+    .cart .remove-btn {
+        color: #FB774B;
+        text-decoration: none;
+        font-size: 14px;
+        background-color: #FFF;
+        border: none;
+        width: 100%;
+        text-align: left;
+    }
+</style>
 
     <!-- Cart -->
     <section class="cart container my-5 py-5">
@@ -142,14 +168,10 @@ function calculateTotal() {
 
         <div class="cart-total">
             <table>
-                <!-- <tr>
-                    <td>Subtotal</td>
-                    <td>$<?php echo $_SESSION['total']; ?></td>
-                </tr> -->
 
                 <tr>
                     <td>Total</td>
-                    <td>$<?php echo $_SESSION['total']; ?></td>
+                    <td>$<?php echo $_SESSION['total_price']; ?></td>
                 </tr>
             </table>
         </div>
