@@ -124,6 +124,10 @@ button:hover {
     color: coral
 }
 
+#brand {
+    background-color: #FFF7F8;
+}
+
 #new .one img {
     width: 100%;
     height: 100%;
@@ -389,26 +393,6 @@ footer .copyright img {
 .cart td a {
     color: #FB774B;
 }
-
-/*.cart .remove-btn {*/
-/*    color: #FB774B;*/
-/*    text-decoration: none;*/
-/*    font-size: 14px;*/
-/*    background-color: #FFF;*/
-/*    border: none;*/
-/*    width: 100%;*/
-/*    text-align: left;*/
-/*}*/
-
-/*.cart .update-btn {*/
-/*    color: #FB774B;*/
-/*    text-decoration: none;*/
-/*    font-size: 12px;*/
-/*    background-color: #FFF;*/
-/*    border: none;*/
-/*    width: 50%;*/
-/*    text-align: left;*/
-/*}*/
 
 .cart .product-info p {
     margin-bottom: 3px;

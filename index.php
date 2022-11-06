@@ -17,6 +17,38 @@ include('layouts/header.php');
     </section>
 
 
+    <!-- New -->
+    <section id="new" class="w-100">
+        <div class="row p-0 m-0">
+
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="assets/imgs/products/p1.jpg"/>
+                <div class="details">
+                    <h2>Extremely Awesome Shoes</h2>
+                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="assets/imgs/products/p2.jpg"/>
+                <div class="details">
+                    <h2>Cool Glasses</h2>
+                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
+                <img class="img-fluid" src="assets/imgs/products/p3.jpg"/>
+                <div class="details">
+                    <h2>50% OFF Watches</h2>
+                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
     <!-- Most Visited -->
     <?php
 
@@ -65,8 +97,8 @@ include('layouts/header.php');
     <?php } ?>
 
     <!-- Brand -->
-    <section id="brand" class="container">
-        <div class="row">
+    <section id="brand">
+        <div class="row container mx-auto">
             <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brands/1.png"/>
             <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brands/2.png"/>
             <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brands/3.png"/>
@@ -74,37 +106,6 @@ include('layouts/header.php');
         </div>
     </section>
 
-
-    <!-- New -->
-    <section id="new" class="w-100">
-        <div class="row p-0 m-0">
-
-            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/products/p1.jpg"/>
-                <div class="details">
-                    <h2>Extremely Awesome Shoes</h2>
-                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
-                </div>
-            </div>
-
-            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/products/p2.jpg"/>
-                <div class="details">
-                    <h2>Cool Glasses</h2>
-                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
-                </div>
-            </div>
-
-            <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/products/p3.jpg"/>
-                <div class="details">
-                    <h2>50% OFF Watches</h2>
-                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- Featured -->
     <section id="featured" class="my-5 pb-5">
@@ -140,8 +141,8 @@ include('layouts/header.php');
     <!-- Banner -->
     <section id="banner" class="my-5 py-5">
         <div class="container">
-            <h4>MID SEASON'S SALE</h4>
-            <h1>Fall Collection <br> upto 30% OFF </h1>
+            <h4>END SEASON'S SALE</h4>
+            <h1>Winter Collection <br> upto 30% OFF </h1>
             <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
         </div>
     </section>
@@ -149,9 +150,9 @@ include('layouts/header.php');
     <!-- Clothes -->
     <section id="featured" class="my-5">
         <div class="contaner text-center mt-5 py-5">
-            <h3>Dresses & Clothes</h3>
+            <h3>Hoodies & Jackets</h3>
             <hr class="mx-auto">
-            <p>Here you can check out our apparel collection</p>
+            <p>Here you can check out our jacket collection</p>
         </div>
         <div class="row mx-auto container-fluid">
 
