@@ -129,7 +129,7 @@ include('layouts/header.php');
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/<?php echo $value['image']; ?>"/>
+                        <img src="assets/imgs/products/<?php echo $value['image']; ?>"/>
                         <div>
                             <p><?php echo $value['name']; ?></p>
                             <small><span>$</span><?php echo $value['price']; ?></small>

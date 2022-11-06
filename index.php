@@ -44,7 +44,7 @@ include('layouts/header.php');
         <?php foreach($data as $key => $value) {  ?>
 
             <div class="product text-center col-lg-2 col-md-3  col-sm-12 mx-auto">
-                <img class="img-fluid mb-3" src="assets/imgs/<?php echo $value['image']; ?>"/>
+                <img class="img-fluid mb-3" src="assets/imgs/products/<?php echo $value['image']; ?>"/>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -67,10 +67,10 @@ include('layouts/header.php');
     <!-- Brand -->
     <section id="brand" class="container">
         <div class="row">
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand1.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand2.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand3.png"/>
-            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brand4.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brands/1.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brands/2.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brands/3.png"/>
+            <img class="img-fluid col-lg-3 col-md-6 col-sm-12" src="assets/imgs/brands/4.png"/>
         </div>
     </section>
 
@@ -80,7 +80,7 @@ include('layouts/header.php');
         <div class="row p-0 m-0">
 
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/p1.jpg"/>
+                <img class="img-fluid" src="assets/imgs/products/p1.jpg"/>
                 <div class="details">
                     <h2>Extremely Awesome Shoes</h2>
                     <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
@@ -88,7 +88,7 @@ include('layouts/header.php');
             </div>
 
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/p2.jpg"/>
+                <img class="img-fluid" src="assets/imgs/products/p2.jpg"/>
                 <div class="details">
                     <h2>Cool Glasses</h2>
                     <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
@@ -96,7 +96,7 @@ include('layouts/header.php');
             </div>
 
             <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
-                <img class="img-fluid" src="assets/imgs/p3.jpg"/>
+                <img class="img-fluid" src="assets/imgs/products/p3.jpg"/>
                 <div class="details">
                     <h2>50% OFF Watches</h2>
                     <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
@@ -120,7 +120,7 @@ include('layouts/header.php');
         <?php while($row = $featured_products->fetch_assoc()) { ?>
 
             <div class="product text-center col-lg-3 col-md-4  col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>"/>
+                <img class="img-fluid mb-3" src="assets/imgs/products/<?php echo $row['product_image']; ?>"/>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -160,7 +160,7 @@ include('layouts/header.php');
             <?php while($row = $clothes_products->fetch_assoc()) { ?>
 
             <div class="product text-center col-lg-3 col-md-4  col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>"/>
+                <img class="img-fluid mb-3" src="assets/imgs/products/<?php echo $row['product_image']; ?>"/>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>

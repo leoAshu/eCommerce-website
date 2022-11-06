@@ -58,19 +58,19 @@ include('layouts/header.php');
                     
                 <!-- Product Image -->
                 <div class="col-lg-5 col-md-6 col-sm-12">
-                    <img class="img-fluid w-100 pb-1" src="assets/imgs/<?php echo $row['product_image']; ?>" id="mainImg"/>
+                    <img class="img-fluid w-100 pb-1" src="assets/imgs/products/<?php echo $row['product_image']; ?>" id="mainImg"/>
                     <div class="small-img-group">
                         <div class="small-img-col">
-                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image']; ?>" width="100%"/>
+                            <img class="small-img" src="assets/imgs/products/<?php echo $row['product_image']; ?>" width="100%"/>
                         </div>
                         <div class="small-img-col">
-                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image2']; ?>" width="100%"/>
+                            <img class="small-img" src="assets/imgs/products/<?php echo $row['product_image2']; ?>" width="100%"/>
                         </div>
                         <div class="small-img-col">
-                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image3']; ?>" width="100%"/>
+                            <img class="small-img" src="assets/imgs/products/<?php echo $row['product_image3']; ?>" width="100%"/>
                         </div>
                         <div class="small-img-col">
-                            <img class="small-img" src="assets/imgs/<?php echo $row['product_image4']; ?>" width="100%"/>
+                            <img class="small-img" src="assets/imgs/products/<?php echo $row['product_image4']; ?>" width="100%"/>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@ include('layouts/header.php');
             <?php while($row = $related_products->fetch_assoc()) { ?>
 
             <div class="product text-center col-lg-3 col-md-4  col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>"/>
+                <img class="img-fluid mb-3" src="assets/imgs/products/<?php echo $row['product_image']; ?>"/>
                 <div class="star">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
