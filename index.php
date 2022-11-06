@@ -12,7 +12,7 @@ include('layouts/header.php');
             <h5>NEW ARRIVALS</h5>
             <h1><span>Best Prices</span> This Season</h1>
             <p>Eshop offers the best products for the most affordable prices</p>
-            <button>Shop Now</button>
+            <button onclick="window.location.href='shop.php'">Shop Now</button>
         </div>
     </section>
 
@@ -83,7 +83,7 @@ include('layouts/header.php');
                 <img class="img-fluid" src="assets/imgs/p1.jpg"/>
                 <div class="details">
                     <h2>Extremely Awesome Shoes</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
                 </div>
             </div>
 
@@ -91,7 +91,7 @@ include('layouts/header.php');
                 <img class="img-fluid" src="assets/imgs/p2.jpg"/>
                 <div class="details">
                     <h2>Cool Glasses</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
                 </div>
             </div>
 
@@ -99,7 +99,7 @@ include('layouts/header.php');
                 <img class="img-fluid" src="assets/imgs/p3.jpg"/>
                 <div class="details">
                     <h2>50% OFF Watches</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
                 </div>
             </div>
 
@@ -142,7 +142,7 @@ include('layouts/header.php');
         <div class="container">
             <h4>MID SEASON'S SALE</h4>
             <h1>Fall Collection <br> upto 30% OFF </h1>
-            <button class="text-uppercase">Shop Now</button>
+            <button onclick="window.location.href='shop.php'" class="text-uppercase">Shop Now</button>
         </div>
     </section>
 
