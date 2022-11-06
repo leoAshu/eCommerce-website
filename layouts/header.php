@@ -21,8 +21,8 @@
     <nav class="navbar navbar-expand-lg bg-white py-3 fixed-top">
         <div class="container">
 
-            <img class="logo" src="assets/imgs/logo.png"/>
-            <h2 class="Shoppe">Shoppe</h2>
+            <img class="logo" src="assets/imgs/logo.png" onclick="window.location.href='index.php'"/>
+            <h2 class="brand" onclick="window.location.href='index.php'">Shoppe</h2>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
