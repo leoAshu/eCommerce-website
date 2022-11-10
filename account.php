@@ -80,7 +80,7 @@ include('layouts/header.php');
             <tr>
                 <td>
                     <div class="product-info">
-                        <img src="assets/imgs/f1.jpg"/>
+                        <img src="assets/imgs/products/p2.jpg"/>
                         <div>
                             <p class="mt-3">Product Name</p>
                         </div>
