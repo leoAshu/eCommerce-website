@@ -29,7 +29,7 @@ if(isset($_POST['login'])) {
             $_SESSION['user_email'] = $email;
             $_SESSION['logged_in'] = true;
 
-            header('location: account.php?message=Logged in successfully!');
+            header('location: account.php?success=Logged in successfully!');
         } else {
             header('location: login.php?error=Email or password is incorrect!');
         }
