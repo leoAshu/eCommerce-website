@@ -45,7 +45,7 @@ if(isset($_POST['register'])) {
             $stmt1 = $conn->prepare("INSERT INTO users (user_name, user_email, user_password) VALUES (?,?,?)");
             $stmt1->bind_param('sss', $name, $email, md5($password));
                         
-            if($stmt->execute()) {
+            if($stmt1->execute()) {
 
                 // Account created successfully
                 $_SESSION['user_id'] = $stmt1->insert_id;
