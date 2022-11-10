@@ -52,7 +52,7 @@ if(isset($_POST['register'])) {
                 $_SESSION['user_email'] = $email;
                 $_SESSION['user_name'] = $name;
                 $_SESSION['logged_in'] = true;
-                header('location: account.php?register=Registration Successful!');
+                header('location: account.php?success=Registration Successful!');
 
             } else {
 

@@ -58,6 +58,9 @@ include('layouts/header.php');
         <div class="row container mx-auto">
             
             <div class="text-center mt-3 pt-5 col-lg-6 col-12">
+
+            <p class="text-center" style="color:green"><?php if(isset($_GET['success'])) { echo $_GET['success']; } ?></p>
+
                 <h3 class="font-weight-bold">Account Info</h3>
                 <hr class="mx-auto">
 
