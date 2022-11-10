@@ -2,6 +2,8 @@
 
 session_start();
 
+include('server/connection.php');
+
 if(!isset($_SESSION['logged_in'])) {
     header('location: login.php');
     exit;
@@ -14,6 +16,36 @@ if(isset($_GET['logout'])) {
         unset($_SESSION['user_name']);
         header('location: login.php');
         exit;
+    }
+}
+
+if(isset($_POST['change_password'])) {
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirmPassword'];
+
+    if($password != $confirmPassword) {
+        
+        // Password and Confirm Password doesn't match
+        header('location: account.php?error=Passwords dont match!');
+
+    } else if(strlen($password) < 6) {
+        
+        // Password length is less than 6 characters
+        header('location: account.php?error=Password must be atleast 6 characters!');
+    
+    } else {
+
+        $stmt = $conn->prepare("UPDATE users SET user_password=? WHERE user_id=?");
+        $stmt->bind_param('si', md5($password), $_SESSION['user_id']);
+
+        if($stmt->execute()) {
+
+            header('location: account.php?message=Password updated successfully!');
+        } else {
+
+            header('location: account.php?error=Password update failed!');
+        }
+
     }
 }
 
@@ -38,7 +70,10 @@ include('layouts/header.php');
             </div>
 
             <div class="col-lg-6 col-12">
-                <form id="account-form">
+                <form id="account-form" method="POST" action="account.php">
+
+                    <p class="text-center" style="color:red"><?php if(isset($_GET['error'])) { echo $_GET['error']; } ?></p>
+                    <p class="text-center" style="color:green"><?php if(isset($_GET['message'])) { echo $_GET['message']; } ?></p>
                     
                     <h3>Change password</h3>
                     <hr class="mx-auto">
@@ -54,7 +89,7 @@ include('layouts/header.php');
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Update" class="btn" id="change-password-btn"/>
+                        <input type="submit" value="Update" name="change_password" class="btn" id="change-password-btn"/>
                     </div>
 
                 </form>
