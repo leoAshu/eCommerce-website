@@ -15,6 +15,11 @@ $stmt->store_result();
 $stmt->fetch();
 
 $records_per_page = 8;
+$total_pages = ceil($total_records/$records_per_page);
+
+if($page_no > $total_pages) {
+    $page_no = 1;
+}
 
 $offset = ($page_no-1) * $records_per_page;
 
@@ -22,9 +27,6 @@ $previous_page = $page_no - 1;
 $next_page = $page_no + 1;
 
 $adjacents = "2";
-
-$total_pages = ceil($total_records/$records_per_page);
-
 
 $stmt1 = $conn->prepare("SELECT * FROM products LIMIT $offset, $records_per_page");
 $stmt1->execute();
