@@ -578,3 +578,9 @@ th:last-child {
     color: #FFF;
     background-color: coral;
 }
+
+/* Users */
+.users-table thead {
+    background-color: #FB774B;
+    color: #FFF;
+}
