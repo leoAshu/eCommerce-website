@@ -1,7 +1,7 @@
 <?php 
 
 include('layouts/header.php'); 
-include('server/get_all_users.php');
+include('server/get_other_users.php');
 
 ?>
 
@@ -11,56 +11,12 @@ include('server/get_all_users.php');
             <hr>
         </div>
 
-        <div class="container">
-                <table class="table table-hover users-table">
-                <caption>Users registered on Shoppe</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Contact</th>
-                        </tr>
-                    </thead>
+        <?php include('server/get_all_users.php'); ?>
 
-                    <?php 
-                            $counter = 1;
-                            while($row = $users->fetch_assoc()) { 
-                    ?>
+    </section>
 
-                    <tbody>
-                        <tr>
-                            <th scope="row"><?php echo $counter++; ?></th>
-
-                            <td>
-                                <p><?php echo $row['user_name'] ?></p>
-                            </td>
-
-                            <td>
-                                <p><?php echo $row['user_email'] ?></p>
-                            </td>
-
-                            <td>
-                                <p><?php echo $row['user_address'] ?></p>
-                            </td>
-
-                            <td>
-                                <p><?php 
-                                        $contact = $row['user_contact'];
-                                        echo "+".$contact[0]." (".substr($contact, 1, 3).") ".substr($contact, 4, 4)."-".substr($contact, 7);
-                                    ?>
-                                </p>
-                            </td>
-
-                        </tr>
-                    </tbody>
-
-                    <?php } ?>
-
-                </table>
-        </div>
-
+    <section>
+        <?php echo $contents; ?>
     </section>
 
 <?php include('layouts/footer.php'); ?>
