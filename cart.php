@@ -145,7 +145,7 @@ include('layouts/header.php');
 
                     <form method="POST" action="cart.php">
                         <input type="hidden" name="product_id" value="<?php echo $value['id']; ?>"/>
-                        <input type="number" name="product_quantity" value="<?php echo $value['quantity']; ?>"/>
+                        <input type="number" name="product_quantity" value="<?php echo $value['quantity']; ?>" min="1"/>
                         <input type="submit" class="update-btn" name="update_quantity" value="Update"/>
                     </form>
 
